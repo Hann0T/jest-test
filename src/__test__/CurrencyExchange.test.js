@@ -19,7 +19,7 @@ describe('<CurrencyExchange />', () => {
     describe('when the entry value is less than 100', () => {
       beforeEach(() => {
         //TODO: make a callback -> mountInput(value);
-        let value = 99;
+        let value = 100;
         const input = wrapper.find('.currency-input__input');
 
         input.simulate('change', { target: { name: 'input', value: value } });

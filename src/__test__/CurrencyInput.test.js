@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import { CurrencyInput } from '../Components/CurrencyInput';
 
 const testProps = {
-  value: '1',
+  value: 'sfsdf',
   onChange: () => {},
 };
 
