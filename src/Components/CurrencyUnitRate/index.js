@@ -5,7 +5,8 @@ import './CurrencyUnitRate.css';
 const CurrencyUnitRate = ({ currency, unitRate }) => {
   return (
     <p className='currency-unit-rate'>
-      {currency} = {unitRate}
+      <span>{currency}</span> = <span className='unit-rate'>{unitRate}</span>{' '}
+      USD
     </p>
   );
 };
