@@ -5,19 +5,34 @@ import { CurrencyExchange } from '../Components/CurrencyExchange';
 
 describe('<CurrencyExchange />', () => {
   test('render CurrencyExchange component', () => {
-    const currencyExchange = mount(<CurrencyExchange />);
-    expect(currencyExchange.length).toEqual(1);
+    const wrapper = mount(<CurrencyExchange />);
+    expect(wrapper.length).toEqual(1);
   });
 
-  // test('first test', () => {
-  //   const wrapper = mount(<CurrencyExchange />);
-  //   const inputWrapper = wrapper.find('CurrencyInput');
-  //   const result = wrapper.find('CurrencyResult');
+  describe('main functionality', () => {
+    let wrapper;
+    let value = 100;
 
-  //   const input = wrapper.find('input');
+    beforeEach(() => {
+      wrapper = mount(<CurrencyExchange />);
+      const input = wrapper.find('.currency-input__input');
 
-  //   input.simulate('change', { target: { value: 100 } });
+      input.simulate('change', { target: { name: 'input', value: value } });
+    });
 
-  //   expect(input.text()).toBe('1');
-  // });
+    test('when the entry value is less than 100', () => {
+      const currencyUnitRate = wrapper.find('CurrencyUnitRate');
+      expect(currencyUnitRate.props().unitRate).toBe(1 / 4.02);
+    });
+
+    test('when the entry value is greater than 100', () => {
+      const currencyUnitRate = wrapper.find('CurrencyUnitRate');
+      expect(currencyUnitRate.props().unitRate).toBe(1 / 4.08);
+    });
+
+    test('when the entry value is greater than 1000', () => {
+      const currencyUnitRate = wrapper.find('CurrencyUnitRate');
+      expect(currencyUnitRate.props().unitRate).toBe(1 / 4.12);
+    });
+  });
 });

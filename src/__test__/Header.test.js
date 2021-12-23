@@ -12,7 +12,6 @@ describe('<Header />', () => {
 
   test("The header component didn't change", () => {
     const header = renderer.create(<Header />);
-
     expect(header.toJSON()).toMatchSnapshot();
   });
 
