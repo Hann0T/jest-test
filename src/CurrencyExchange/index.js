@@ -6,9 +6,11 @@ import { CurrencyItem } from '../CurrencyItem';
 import { CurrencyResult } from '../CurrencyResult';
 import { CurrencyUnitRate } from '../CurrencyUnitRate';
 
+import './CurrencyExchange.css';
+
 const CurrencyExchange = () => {
   return (
-    <section>
+    <section className='currency-exchange'>
       <div className='container'>
         <CurrencyContainer>
           <CurrencyInput />
