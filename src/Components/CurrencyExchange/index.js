@@ -10,6 +10,7 @@ import './CurrencyExchange.css';
 
 const CurrencyExchange = () => {
   const [inputValue, setInputValue] = React.useState(1);
+  let unitRate = 0.24937655860349128;
 
   const inputHandler = (ev) => {
     const value = ev.target.value;
@@ -35,7 +36,7 @@ const CurrencyExchange = () => {
         </CurrencyContainer>
         <CurrencyContainer>
           <CurrencyResult upperText={'$1.00 Dll'} result={4.03} />
-          <CurrencyUnitRate currency={'1 PEN'} unitRate={'0.247733 USD'} />
+          <CurrencyUnitRate currency={'1 PEN'} unitRate={unitRate} />
         </CurrencyContainer>
       </div>
     </section>
