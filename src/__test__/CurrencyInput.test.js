@@ -6,16 +6,16 @@ import { mount } from 'enzyme';
 import { CurrencyInput } from '../Components/CurrencyInput';
 
 const props = {
-  value: 1,
+  value: '1',
   onChange: () => {},
 };
 
 describe('<CurrencyInput />', () => {
-  test('the entry must receive a number', () => {
+  test('if the input.value is not a number, the class input--danger will be added', () => {
     const wrapper = mount(
       <CurrencyInput value={props.value} onChange={props.onChange} />,
     );
 
-    expect(typeof wrapper.prop('value')).toBe('number');
+    expect(wrapper.find('input').hasClass('input--danger')).toBeTruthy();
   });
 });
