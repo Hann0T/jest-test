@@ -7,7 +7,7 @@ const CurrencyResult = ({ upperText, result }) => {
     <div className='currency-result'>
       <p className='currency-result__text'>
         <span className='currency-result__upper-text'>{upperText} = </span>
-        {result} PEN
+        {isNaN(parseFloat(result)) ? '0.00 PEN' : `${result} PEN`}
       </p>
     </div>
   );
