@@ -7,7 +7,9 @@ const CurrencyInput = ({ value, onChange }) => {
     <div className='currency-input'>
       <label className='currency-input__label'>Amount</label>
       <input
-        className='currency-input__input'
+        className={`currency-input__input ${
+          typeof value === 'number' ? '' : 'input--danger'
+        }`}
         value={value}
         onChange={onChange}
       />
