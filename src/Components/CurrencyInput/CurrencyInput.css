@@ -12,6 +12,10 @@
   font-size: 1em;
 }
 
+.input--danger {
+  border-color: red;
+}
+
 @media screen and (max-width: 768px) {
   .currency-input,
   .currency-input__input {
