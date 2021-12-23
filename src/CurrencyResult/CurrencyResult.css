@@ -1,0 +1,13 @@
+.currency-result {
+  text-align: left;
+}
+.currency-result__text {
+  font-size: 2em;
+}
+
+.currency-result__upper-text {
+  display: block;
+  color: #a1a6b0;
+  font-weight: bold;
+  font-size: 0.5em;
+}
