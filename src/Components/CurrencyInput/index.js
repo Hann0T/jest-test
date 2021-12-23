@@ -10,6 +10,7 @@ const CurrencyInput = ({ value, onChange }) => {
         className={`currency-input__input ${
           typeof value === 'number' ? '' : 'input--danger'
         }`}
+        name='input'
         value={value}
         onChange={onChange}
       />
