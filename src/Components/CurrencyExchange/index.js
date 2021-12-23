@@ -15,7 +15,7 @@ const CurrencyExchange = () => {
   const inputHandler = (ev) => {
     const value = ev.target.value;
     if (isNaN(parseInt(value))) return setInputValue(value);
-    setInputValue(parseInt(value));
+    setInputValue(parseFloat(value));
   };
 
   return (
