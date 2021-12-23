@@ -11,28 +11,51 @@ describe('<CurrencyExchange />', () => {
 
   describe('main functionality', () => {
     let wrapper;
-    let value = 100;
 
     beforeEach(() => {
       wrapper = mount(<CurrencyExchange />);
-      const input = wrapper.find('.currency-input__input');
-
-      input.simulate('change', { target: { name: 'input', value: value } });
     });
 
-    test('when the entry value is less than 100', () => {
-      const currencyUnitRate = wrapper.find('CurrencyUnitRate');
-      expect(currencyUnitRate.props().unitRate).toBe(1 / 4.02);
+    describe('when the entry value is less than 100', () => {
+      beforeEach(() => {
+        //TODO: make a callback -> mountInput(value);
+        let value = 99;
+        const input = wrapper.find('.currency-input__input');
+
+        input.simulate('change', { target: { name: 'input', value: value } });
+      });
+      test(`The unit rate has to be ${1 / 4.02}`, () => {
+        const currencyUnitRate = wrapper.find('CurrencyUnitRate');
+        expect(currencyUnitRate.props().unitRate).toBe(1 / 4.02);
+      });
     });
 
-    test('when the entry value is greater than 100', () => {
-      const currencyUnitRate = wrapper.find('CurrencyUnitRate');
-      expect(currencyUnitRate.props().unitRate).toBe(1 / 4.08);
+    describe('when the entry value is greater than 100', () => {
+      beforeEach(() => {
+        let value = 200;
+        const input = wrapper.find('.currency-input__input');
+
+        input.simulate('change', { target: { name: 'input', value: value } });
+      });
+
+      test(`The unit rate has to be ${1 / 4.08}`, () => {
+        const currencyUnitRate = wrapper.find('CurrencyUnitRate');
+        expect(currencyUnitRate.props().unitRate).toBe(1 / 4.08);
+      });
     });
 
-    test('when the entry value is greater than 1000', () => {
-      const currencyUnitRate = wrapper.find('CurrencyUnitRate');
-      expect(currencyUnitRate.props().unitRate).toBe(1 / 4.12);
+    describe('when the entry value is greater than 1000', () => {
+      beforeEach(() => {
+        let value = 1001;
+        const input = wrapper.find('.currency-input__input');
+
+        input.simulate('change', { target: { name: 'input', value: value } });
+      });
+
+      test(`The unit rate has to be ${1 / 4.12}`, () => {
+        const currencyUnitRate = wrapper.find('CurrencyUnitRate');
+        expect(currencyUnitRate.props().unitRate).toBe(1 / 4.12);
+      });
     });
   });
 });
