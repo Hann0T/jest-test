@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The header component didn't change 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      Convert US Dollars to Peruvian Soles
+    </h1>
+  </div>
+</header>
+`;
