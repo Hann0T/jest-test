@@ -8,7 +8,7 @@ const CurrencyInput = ({ value, onChange }) => {
       <label className='currency-input__label'>Amount</label>
       <input
         className={`currency-input__input ${
-          typeof value === 'number' ? '' : 'input--danger'
+          isNaN(parseFloat(value)) ? 'input--danger' : ''
         }`}
         name='input'
         value={value}
