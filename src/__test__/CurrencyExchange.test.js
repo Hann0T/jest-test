@@ -25,7 +25,7 @@ describe('<CurrencyExchange />', () => {
     describe('when the entry value is less than 100', () => {
       let unitRateValue = 1 / 4.02;
       beforeEach(() => {
-        inputSimulateChange(100, wrapper);
+        inputSimulateChange(10, wrapper);
       });
 
       test(`The unit rate has to be ${unitRateValue}`, () => {
@@ -49,7 +49,7 @@ describe('<CurrencyExchange />', () => {
     describe('when the entry value is greater than 1000', () => {
       let unitRateValue = 1 / 4.12;
       beforeEach(() => {
-        inputSimulateChange(1001, wrapper);
+        inputSimulateChange(1021, wrapper);
       });
 
       test(`The unit rate has to be ${unitRateValue}`, () => {
